@@ -75,16 +75,19 @@ Below, I have described the accuracy, precision and recall scores for each machi
 ## Summary
 ### Balanced Accuracy Scores
 |	|RandomOverSampler|SMOTE|ClusterCentroids|SMOTEENN|BalancedRandomForestClassifier|EasyEnsembleClassifier|
+|------|-----|------|-------|-------|-------|-------|
 |Score|0.65|0.66|0.54|0.66|0.78|0.93|
 
 ### Precision Scores
 |	|RandomOverSampler|SMOTE|ClusterCentroids|SMOTEENN|BalancedRandomForestClassifier|EasyEnsembleClassifier|
+|------|-----|------|-------|-------|-------|-------|
 |high_risk|0.01|0.01|0.01|0.01|0.03|0.09|
 |low_risk|1.00|1.00|1.00|1.00|1.00|1.00|
 |overall|0.99|0.99|0.99|0.99|0.99|0.99|
 
 ### Precision Scores
 |	|RandomOverSampler|SMOTE|ClusterCentroids|SMOTEENN|BalancedRandomForestClassifier|EasyEnsembleClassifier|
+|------|-----|------|-------|-------|-------|-------|
 |high_risk|0.74|0.63|0.67|0.71|0.70|0.92|
 |low_risk|0.55|0.69|0.42|0.60|0.87|0.94|
 |overall|0.55|0.69|0.42|0.61|0.87|0.94|
