@@ -12,10 +12,12 @@ Recall: Number of true positives / Number of relevant elements
 Balanced Accuracy Score: Average of Recall obtained on each class (High Risk and Low Risk)
 
 ## Results
-Below, I have described the accuracy, precision and recall scores for each machine learning algorithm used in the analysis. I have rounded the balanced accuracy scores to 2dp, for consistency across the results, full values can be seen in the credit_risk_resampling and credit_risk_ensemble files. 
+Below is a comparison of the classification reports and balanced accuarcy scores of each ML model. I have also described the accuracy, precision and recall scores for each machine learning algorithm used in the analysis. I have rounded the balanced accuracy scores to 2 decimal places for consistency across the results, full values can be found in the credit_risk_resampling.ipynb and credit_risk_ensemble.ipynb files. 
 
 ### Oversampling algorithms
 #### RandomOverSampler
+![RandomOverSampler](https://github.com/luke-c-newell/Credit_Risk_Analysis/blob/main/images/RandomOverSampler.png "RandomOverSampler.png")
+
 - Balanced accuracy score: 0.65
 - High Risk Precision score: 0.01
 - Low Risk Precision score: 1.00
@@ -25,6 +27,8 @@ Below, I have described the accuracy, precision and recall scores for each machi
 - Overall Recall score: 0.55
 
 #### SMOTE
+![SMOTE](https://github.com/luke-c-newell/Credit_Risk_Analysis/blob/main/images/SMOTE.png "SMOTE.png")
+
 - Balanced accuracy score: 0.66
 - High Risk Precision score: 0.01
 - Low Risk Precision score: 1.00
@@ -33,8 +37,10 @@ Below, I have described the accuracy, precision and recall scores for each machi
 - Low Risk Recall score: 0.69
 - Overall Recall score: 0.69
 
-### Undersampling algorithm
+### Undersampling algorithms
 #### ClusterCentroids
+![ClusterCentroids](https://github.com/luke-c-newell/Credit_Risk_Analysis/blob/main/images/ClusterCentroids.png "ClusterCentroids.png")
+
 - Balanced accuracy score: 0.54
 - High Risk Precision score: 0.01
 - Low Risk Precision score: 1.00
@@ -43,8 +49,10 @@ Below, I have described the accuracy, precision and recall scores for each machi
 - Low Risk Recall score: 0.42
 - Overall Recall score: 0.42
 
-### Combinatorial algorithm
+### Combinatorial algorithms
 #### SMOTEENN
+![SMOTEENN](https://github.com/luke-c-newell/Credit_Risk_Analysis/blob/main/images/SMOTEENN.png "SMOTEENN.png")
+
 - Balanced accuracy score: 0.66
 - High Risk Precision score: 0.01
 - Low Risk Precision score: 1.00
@@ -55,6 +63,8 @@ Below, I have described the accuracy, precision and recall scores for each machi
 
 ### Machine Learning models that reduce bias
 #### BalancedRandomForestClassifier
+![BalancedRandomForestClassifier](https://github.com/luke-c-newell/Credit_Risk_Analysis/blob/main/images/BalancedRandomForestClassifier.png "BalancedRandomForestClassifier.png")
+
 - Balanced accuracy score: 0.78
 - High Risk Precision score: 0.03
 - Low Risk Precision score: 1.00
@@ -64,6 +74,8 @@ Below, I have described the accuracy, precision and recall scores for each machi
 - Overall Recall score: 0.87
 
 #### EasyEnsembleClassifier
+![EasyEnsembleClassifier](https://github.com/luke-c-newell/Credit_Risk_Analysis/blob/main/images/EasyEnsembleClassifier.png "EasyEnsembleClassifier.png")
+
 - Balanced accuracy score: 0.93
 - High Risk Precision score: 0.09
 - Low Risk Precision score: 1.00
@@ -85,7 +97,7 @@ Below, I have described the accuracy, precision and recall scores for each machi
 |low_risk|1.00|1.00|1.00|1.00|1.00|1.00|
 |overall|0.99|0.99|0.99|0.99|0.99|0.99|
 
-### Precision Scores
+### Recall Scores
 |	|RandomOverSampler|SMOTE|ClusterCentroids|SMOTEENN|BalancedRandomForestClassifier|EasyEnsembleClassifier|
 |------|-----|------|-------|-------|-------|-------|
 |high_risk|0.74|0.63|0.67|0.71|0.70|0.92|
