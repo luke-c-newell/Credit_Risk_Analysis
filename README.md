@@ -90,6 +90,8 @@ Below is a comparison of the classification reports and balanced accuarcy scores
 |------|-----|------|-------|-------|-------|-------|
 |Score|0.65|0.66|0.54|0.66|0.78|0.93|
 
+Overall, the EasyEnsembleClassifier model had the highest balanced accuracy score (0.93), with the ClusterCentroids model having the lowest score (0.54). The BalancedRandomForestClassifier had the second highest score (0.78) which indicates that the algorithms designed to reduce bias were the most accurate of the models used in this analysis.
+
 ### Precision Scores
 |	|RandomOverSampler|SMOTE|ClusterCentroids|SMOTEENN|BalancedRandomForestClassifier|EasyEnsembleClassifier|
 |------|-----|------|-------|-------|-------|-------|
@@ -97,9 +99,18 @@ Below is a comparison of the classification reports and balanced accuarcy scores
 |low_risk|1.00|1.00|1.00|1.00|1.00|1.00|
 |overall|0.99|0.99|0.99|0.99|0.99|0.99|
 
+The precision scores for the RandomOverSampler, SMOTE, ClusterCentroids and SMOTEENN algorithms were all identical with 0.01 for the high_risk and 1.00 for the low risk. The BalancedRandomForestClassifier and EasyEnsembleClassifier performed slightly better with 0.03 and 0.09 respectively for the high_risk datapoints. This means that for the EasyEnsembleClassifier model, 9% of loans identified as high risk were correctly identified and 91% were actually low risk. 
+
 ### Recall Scores
 |	|RandomOverSampler|SMOTE|ClusterCentroids|SMOTEENN|BalancedRandomForestClassifier|EasyEnsembleClassifier|
 |------|-----|------|-------|-------|-------|-------|
 |high_risk|0.74|0.63|0.67|0.71|0.70|0.92|
 |low_risk|0.55|0.69|0.42|0.60|0.87|0.94|
 |overall|0.55|0.69|0.42|0.61|0.87|0.94|
+
+The recall scores indicate that the EasyEnsembleClassifier was the most effective with 92% of high risk loans being correctly identified and an overall recall score of 94%. The ClusterCentroids algorithm performed the worst in recall, with an overall score of 0.42.
+
+### Recommendations
+Overall, the best performing machine learning model for the loan data was the EasyEnsembleClassifier algorithm. This model had the highest balanced accuracy score, the highest precision for high risk loans and the highest recall scores for both high and low risk loans. Despite being the best model of the algorithms tested, the EasyEnsembleClassifier still can only predict high risk loans at a 9% precision level. This is a drawback of using machine learning models to predict the results of highly unbalanced datasets, as even the best models still struggle to accurately predict results from a relatively small amount of training data. 
+
+I would recommend using the EasyEnsembleClassifier as part of LendingClub's approach to loan approvals. The model can recall 92% of high risk loans but this means that 8% of high risk loans are missed by the algorithm. The model also identifies a large number of low risk loans as high risk, as shown by the high risk precision score of 0.09. I would use this model to identify loans for further analysis, but it should not be used as an exclusive method for loan approvals.
