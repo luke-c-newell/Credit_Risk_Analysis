@@ -1,15 +1,15 @@
 # Credit_Risk_Analysis
 ## Overview
-This repository contains code for machine learning models that I have used to assess credit risk across a portfolio of personal loans. My client, LendingClub, wants to understand how the performance of different machine learning models differs so they can assess whether to use them for assessing credit risk. As credit risk is an unbalanced classification dataset, due to the fact that good loans vastly outnumber bad loans, there are a number of different models that can be employed. 
+This repository contains code for machine learning models that I have used to assess credit risk across a portfolio of personal loans. My client, LendingClub, wants to understand how the performance of different machine learning models differ, so they can assess whether to use them for assessing credit risk. 
 
-Using a Jupyter Notebook, the scikit-learn and imbalanced-learn libraries, I have used oversampling, undersampling and combinatorial techniques to analyze a credit card dataset (LoanStats_2019Q1.csv). To compare the models, I have calculated the balanced accuracy score, as well as the precision and recall scores to understand which model performs best. 
+Using a Jupyter Notebook, the scikit-learn and imbalanced-learn libraries, I have used oversampling, undersampling and combinatorial techniques to analyze a credit card loan dataset (LoanStats_2019Q1.csv). To compare the models, I have calculated the balanced accuracy score, as well as the precision and recall scores to understand which model performs best. 
 
 ### Terms used to assess Machine Learning models
-Precision: Number of true positives / Sum of all positives
+**Precision**: number of true positives / sum of all positives
 
-Recall: Number of true positives / Number of relevant elements
+**Recall**: number of true positives / number of relevant elements
 
-Balanced Accuracy Score: Average of Recall obtained on each class (High Risk and Low Risk)
+**Balanced Accuracy Score**: Average of recall obtained on each class (High Risk and Low Risk)
 
 ## Results
 Below is a comparison of the classification reports and balanced accuarcy scores of each ML model. I have also described the accuracy, precision and recall scores for each machine learning algorithm used in the analysis. I have rounded the balanced accuracy scores to 2 decimal places for consistency across the results, full values can be found in the credit_risk_resampling.ipynb and credit_risk_ensemble.ipynb files. 
@@ -99,7 +99,7 @@ Overall, the EasyEnsembleClassifier model had the highest balanced accuracy scor
 |low_risk|1.00|1.00|1.00|1.00|1.00|1.00|
 |overall|0.99|0.99|0.99|0.99|0.99|0.99|
 
-The precision scores for the RandomOverSampler, SMOTE, ClusterCentroids and SMOTEENN algorithms were all identical with 0.01 for the high_risk and 1.00 for the low risk. The BalancedRandomForestClassifier and EasyEnsembleClassifier performed slightly better with 0.03 and 0.09 respectively for the high_risk datapoints. This means that for the EasyEnsembleClassifier model, 9% of loans identified as high risk were correctly identified and 91% were actually low risk. 
+The precision scores for the RandomOverSampler, SMOTE, ClusterCentroids and SMOTEENN algorithms were all identical with 0.01 for the high_risk and 1.00 for the low risk. The BalancedRandomForestClassifier and EasyEnsembleClassifier performed slightly better with 0.03 and 0.09 respectively for the high_risk data points. This means that for the EasyEnsembleClassifier model, 9% of loans identified as high risk were correctly identified and 91% were incorrectly identified as high risk, when they were in fact low risk loans. 
 
 ### Recall Scores
 |	|RandomOverSampler|SMOTE|ClusterCentroids|SMOTEENN|BalancedRandomForestClassifier|EasyEnsembleClassifier|
